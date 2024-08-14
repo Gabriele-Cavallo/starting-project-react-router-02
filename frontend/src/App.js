@@ -5,9 +5,9 @@ import Root from "./pages/Root";
 import Error from "./pages/Error";
 import HomePage from "./pages/HomePage";
 import EventsPage, { loader as eventsLoader } from "./pages/EventsPage";
-import EventDetailPage, { loader as eventsDetailsLoader } from "./pages/EventDetailPage";
+import EventDetailPage, { loader as eventsDetailsLoader, action as deleteEventAction} from "./pages/EventDetailPage";
 import EditEventPage from "./pages/EditEventPage";
-import NewEventPage from "./pages/NewEventPage";
+import NewEventPage, {action as newEventAction} from "./pages/NewEventPage";
 import EventsRootLayout from "./pages/EventsRoot";
 
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
@@ -57,6 +57,7 @@ const router = createBrowserRouter([
             {
               index: true,
               element: <EventDetailPage />,
+              action: deleteEventAction
             },
             {
               path: 'edit',
@@ -66,7 +67,8 @@ const router = createBrowserRouter([
         },
         {
           path: 'new',
-          element: <NewEventPage />
+          element: <NewEventPage />,
+          action: newEventAction,
         },
       ]
     },
