@@ -1,6 +1,6 @@
 import MainNavigation from "../components/MainNavigation";
 import PageContent from "../components/PageContent";
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 
 export default function Error(){
     const error = useRouteError();
@@ -23,6 +23,7 @@ export default function Error(){
             <PageContent title={title}>
                 <p>{message}</p>
             </PageContent>
+            <Link to="../" relative="path" >Back</Link>
         </>
     )
 }
